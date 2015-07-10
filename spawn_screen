@@ -1,16 +1,29 @@
 #!/bin/bash
 
-#Libraries need a ldconfig
+# Libraries need a ldconfig
 
 ldconfig
 
+# Read the URL environment variable from the Resin.io dashboard into text
+
 echo $URL > /usr/src/app/url.txt
+
+# Add a pi user
 
 useradd -m pi
 
+# Grnt the pi user permission to use the video
+
 gpasswd -a pi video
 
+# Copy the xinitrc from app to the pi user's home dir
+
 cp /app/xinitrc /home/pi/.xinitrc;
+
+# Make the pi user the owner of the copied xinitrc
+
 chown pi: /home/pi/.xinitrc
+
+# Switch to the pi user and start X in the background
 
 su - pi -c startx &
