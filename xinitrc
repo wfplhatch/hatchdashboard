@@ -33,4 +33,6 @@ while true; do
 	# Start the browser (See http://peter.sh/experiments/chromium-command-line-switches/)
 	chromium  --app=$( cat /usr/src/app/url.txt )
 
+	x11vnc -find
+
 done;
