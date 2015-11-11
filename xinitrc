@@ -30,8 +30,6 @@ while true; do
 	# Start the window manager (remove "-use_cursor no" if you actually want mouse interaction)
 	matchbox-window-manager -use_titlebar no &
 
-	x11vnc -find &
-
 	# Start the browser (See http://peter.sh/experiments/chromium-command-line-switches/)
 	chromium  --app=$( cat /usr/src/app/url.txt )
 
